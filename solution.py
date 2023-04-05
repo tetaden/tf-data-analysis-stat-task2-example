@@ -14,5 +14,5 @@ def solution(p: float, x: np.array) -> tuple:
     loc = x.mean()
     n = len(x)
     scale = ( x * x ).sum() / n
-    return np.sqrt(scale * (n - 1) / (chi.ppf(alpha, n - 1) * 26)), \
-           np.sqrt(scale * (n - 1) / (chi.ppf(alpha /2, n - 1) * 26))
+    return scale * (n - 1) / chi.ppf(alpha, n - 1), \
+           nscale * (n - 1) / chi.ppf(alpha /2, n - 1)
