@@ -15,4 +15,4 @@ def solution(p: float, x: np.array) -> tuple:
     n = len(x)
     scale = ( x * x ).sum() / n
     return scale * (n - 1) / chi.ppf(alpha, n - 1), \
-           nscale * (n - 1) / chi.ppf(alpha /2, n - 1)
+           scale * (n - 1) / chi.ppf(alpha /2, n - 1)
