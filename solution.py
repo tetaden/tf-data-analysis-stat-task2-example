@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-from scipy.stats import norm, chi2
+from scipy.stats import norm, chi
 
 
 chat_id = 415542660 # Ваш chat ID, не меняйте название переменной
@@ -13,5 +13,5 @@ def solution(p: float, x: np.array) -> tuple:
     alpha = 1 - p
     loc = x.mean()
     n = len(x)
-    s2 = ((x - x.mean()) ** 2).sum() / n
-    return np.sqrt(s2 / (26 * chi.ppf( (1 + alpha) / 2, 2))) , np.sqrt(s2 / (26 *  chi.ppf((1 - alpha) /2, 2)))
+    s2 = ((x - loc) ** 2).sum() / n
+    return np.sqrt(s2 / (26 * chi.ppf( (1 + alpha) / 2, 2))), np.sqrt(s2 / (26 *  chi.ppf((alpha) /2, 2)))
