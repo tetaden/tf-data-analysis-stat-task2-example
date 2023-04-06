@@ -14,4 +14,4 @@ def solution(p: float, x: np.array) -> tuple:
     loc = x.mean()
     n = len(x)
     s2 = ((x - x.mean()) ** 2).sum() / n
-    return np.sqrt(s2 / (26 * chi2.ppf( (1 + alpha) / 2, 2))) , np.sqrt(s2 / (26 *  chi2.ppf((alpha) /2, 2)))
+    return np.sqrt(s2 / (26 * chi.ppf( (1 + alpha) / 2, 2))) , np.sqrt(s2 / (26 *  chi.ppf((1 - alpha) /2, 2)))
